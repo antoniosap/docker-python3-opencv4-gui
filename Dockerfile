@@ -26,6 +26,7 @@ RUN pip install numpy
 RUN pip install ipython
 RUN pip install scipy
 RUN pip install jupyter
+RUN pip install moviePy
 
 WORKDIR /
 ENV OPENCV_VERSION="4.0.1"
