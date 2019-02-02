@@ -19,6 +19,8 @@ RUN apt-get update \
         libavformat-dev \
         libpq-dev \
         libqt4-dev \
+        nano \
+        vim \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
@@ -27,6 +29,7 @@ RUN pip install ipython
 RUN pip install scipy
 RUN pip install jupyter
 RUN pip install moviePy
+RUN pip install --upgrade imutils
 
 WORKDIR /
 ENV OPENCV_VERSION="4.0.1"

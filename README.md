@@ -12,6 +12,7 @@ Docker image built with [contrib modules](https://github.com/opencv/opencv_contr
 + ipython
 + jupyter
 + moviePy
++ imutils
 
 for example:
 
