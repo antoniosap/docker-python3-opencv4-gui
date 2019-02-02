@@ -21,6 +21,7 @@ RUN apt-get update \
         libqt4-dev \
         nano \
         vim \
+        mc \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
