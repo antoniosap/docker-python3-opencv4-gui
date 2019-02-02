@@ -1,6 +1,6 @@
 [![Docker Automated buil](https://img.shields.io/docker/automated/antoniosap/docker-python3-opencv4-gui.svg)]()
 
-Docker image with python 3.7 and opencv 4.0.1 + contrib + GUI interface
+Docker image with python 3.6 and opencv 4.0.1 + contrib + GUI interface
 
 Usage:
 
@@ -13,6 +13,8 @@ Docker image built with [contrib modules](https://github.com/opencv/opencv_contr
 + jupyter
 + moviePy
 + imutils
++ tensorflow
++ keras
 
 for example:
 
