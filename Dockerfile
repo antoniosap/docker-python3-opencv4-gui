@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.6
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
 RUN apt-get update \
@@ -31,6 +31,8 @@ RUN pip install scipy
 RUN pip install jupyter
 RUN pip install moviePy
 RUN pip install --upgrade imutils
+RUN pip install tensorflow
+RUN pip install keras
 
 WORKDIR /
 ENV OPENCV_VERSION="4.0.1"
@@ -55,15 +57,15 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
   -DBUILD_TESTS=OFF \
   -DBUILD_PERF_TESTS=OFF \
   -DCMAKE_BUILD_TYPE=RELEASE \
-  -DCMAKE_INSTALL_PREFIX=$(python3.7 -c "import sys; print(sys.prefix)") \
-  -DPYTHON_EXECUTABLE=$(which python3.7) \
-  -DPYTHON_INCLUDE_DIR=$(python3.7 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
-  -DPYTHON_PACKAGES_PATH=$(python3.7 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+  -DCMAKE_INSTALL_PREFIX=$(python3.6 -c "import sys; print(sys.prefix)") \
+  -DPYTHON_EXECUTABLE=$(which python3.6) \
+  -DPYTHON_INCLUDE_DIR=$(python3.6 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
+  -DPYTHON_PACKAGES_PATH=$(python3.6 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
   .. \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION} 
 RUN ln -s \
-  /usr/local/python/cv2/python-3.7/cv2.cpython-37m-x86_64-linux-gnu.so \
-  /usr/local/lib/python3.7/site-packages/cv2.so
+  /usr/local/python/cv2/python-3.6/cv2.cpython-36m-x86_64-linux-gnu.so \
+  /usr/local/lib/python3.6/site-packages/cv2.so
 RUN export QT_X11_NO_MITSHM=1
