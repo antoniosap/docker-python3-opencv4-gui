@@ -1,9 +1,6 @@
 FROM tensorflow/tensorflow:latest
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
-RUN python3 --version
-RUN which python3
-
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
