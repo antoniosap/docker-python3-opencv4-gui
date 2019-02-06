@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM tensorflow/tensorflow:latest
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
 RUN apt-get update \
