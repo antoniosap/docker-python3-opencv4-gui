@@ -25,13 +25,13 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
-RUN pip3 install numpy
-RUN pip3 install ipython
-RUN pip3 install scipy
-RUN pip3 install jupyter
-RUN pip3 install moviePy
-RUN pip3 install --upgrade imutils
-RUN pip3 install keras
+RUN pip install numpy
+RUN pip install ipython
+RUN pip install scipy
+RUN pip install jupyter
+RUN pip install moviePy
+RUN pip install --upgrade imutils
+RUN pip install keras
 
 WORKDIR /
 ENV OPENCV_VERSION="4.0.1"
