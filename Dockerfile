@@ -24,7 +24,7 @@ RUN apt-get update \
         mc \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip
+RUN pip install --upgrade pip
 RUN pip3 install numpy
 RUN pip3 install ipython
 RUN pip3 install scipy
