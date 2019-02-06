@@ -1,8 +1,6 @@
 FROM tensorflow/tensorflow:latest
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
-RUN python --version
-RUN which python
 RUN python3 --version
 RUN which python3
 
