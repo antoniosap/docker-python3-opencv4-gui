@@ -1,6 +1,11 @@
 FROM tensorflow/tensorflow:latest
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
+RUN python --version
+RUN which python
+RUN python3 --version
+RUN which python3
+
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
@@ -57,15 +62,15 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
   -DBUILD_TESTS=OFF \
   -DBUILD_PERF_TESTS=OFF \
   -DCMAKE_BUILD_TYPE=RELEASE \
-  -DCMAKE_INSTALL_PREFIX=$(python3.6 -c "import sys; print(sys.prefix)") \
-  -DPYTHON_EXECUTABLE=$(which python3.6) \
-  -DPYTHON_INCLUDE_DIR=$(python3.6 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
-  -DPYTHON_PACKAGES_PATH=$(python3.6 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+  -DCMAKE_INSTALL_PREFIX=$(python -c "import sys; print(sys.prefix)") \
+  -DPYTHON_EXECUTABLE=$(which python) \
+  -DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
+  -DPYTHON_PACKAGES_PATH=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
   .. \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION} 
 RUN ln -s \
-  /usr/local/python/cv2/python-3.6/cv2.cpython-36m-x86_64-linux-gnu.so \
-  /usr/local/lib/python3.6/site-packages/cv2.so
+  /usr/local/python/cv2/python/cv2.cpython-36m-x86_64-linux-gnu.so \
+  /usr/local/lib/python/site-packages/cv2.so
 RUN export QT_X11_NO_MITSHM=1
