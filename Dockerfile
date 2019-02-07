@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest
+FROM tensorflow/tensorflow:latest-py3
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
 RUN apt-get update \
