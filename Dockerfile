@@ -22,6 +22,7 @@ RUN apt-get update \
         nano \
         vim \
         mc \
+        python3-tk \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
@@ -32,6 +33,7 @@ RUN pip install jupyter
 RUN pip install moviePy
 RUN pip install --upgrade imutils
 RUN pip install keras
+RUN pip install matplotlib
 
 WORKDIR /
 ENV OPENCV_VERSION="4.0.1"
@@ -64,7 +66,4 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION} 
-#RUN ln -s \
-#  /usr/local/python/cv2/python/cv2.cpython-36m-x86_64-linux-gnu.so \
-#  /usr/local/lib/python/site-packages/cv2.so
 RUN export QT_X11_NO_MITSHM=1

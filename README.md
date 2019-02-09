@@ -15,6 +15,7 @@ Docker image built with [contrib modules](https://github.com/opencv/opencv_contr
 + imutils
 + tensorflow
 + keras
++ matplotlib
 
 for example:
 
@@ -25,7 +26,7 @@ docker run -d \
   --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
   --name docker-python3-opencv4-gui \
   --mount type=bind,source=/home/aldebaran/4TBAGO18/docker-mounts,target=/mnt \
-  docker-python3-opencv4-gui bash
+  antoniosap/docker-python3-opencv4-gui bash
 
   
 docker attach docker-python3-opencv4-gui
