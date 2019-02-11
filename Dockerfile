@@ -66,4 +66,4 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION} 
-RUN export QT_X11_NO_MITSHM=1
+ENV QT_X11_NO_MITSHM=1
