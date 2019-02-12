@@ -26,8 +26,18 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
-RUN pip install numpy ipython scipy jupyter moviePy imutils
-RUN pip install keras matplotlib scikit-image imgaug cython pycocotools
+RUN pip install numpy 
+RUN pip install ipython 
+RUN pip install scipy 
+RUN pip install jupyter 
+RUN pip install moviePy 
+RUN pip install imutils
+RUN pip install keras 
+RUN pip install matplotlib 
+RUN pip install scikit-image 
+RUN pip install imgaug 
+RUN pip install cython 
+RUN pip install pycocotools
 
 WORKDIR /
 ENV OPENCV_VERSION="4.0.1"
