@@ -1,6 +1,14 @@
 FROM tensorflow/tensorflow:latest-py3
 MAINTAINER Antonio Sapuppo <antoniosapuppo@yahoo.it>
 
+ENV DEBIAN_FRONTEND="noninteractive"
+
+RUN apt-get update \
+    && apt-get install -y \
+        tzdata \
+    && ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime \
+    && dpkg-reconfigure --frontend noninteractive tzdata
+
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
