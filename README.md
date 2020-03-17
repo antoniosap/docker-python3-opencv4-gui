@@ -1,6 +1,6 @@
 [![Docker Automated buil](https://img.shields.io/docker/automated/antoniosap/docker-python3-opencv4-gui.svg)]()
 
-Docker image with python 3.6 and opencv 4.0.1 + contrib + GUI interface
+Docker image with python 3.8 and opencv 4.2.0 + contrib + GUI interface
 
 Usage:
 

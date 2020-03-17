@@ -40,7 +40,7 @@ RUN pip install cython
 RUN pip install pycocotools
 
 WORKDIR /
-ENV OPENCV_VERSION="4.0.1"
+ENV OPENCV_VERSION="4.2.0"
 RUN wget https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip \
 && unzip ${OPENCV_VERSION}.zip \
 && rm ${OPENCV_VERSION}.zip
