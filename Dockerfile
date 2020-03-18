@@ -26,7 +26,7 @@ RUN apt-get update \
         libtiff-dev \
         libavformat-dev \
         libpq-dev \
-        libqt4-dev \
+        libqt5-dev \
         nano \
         vim \
         mc \
